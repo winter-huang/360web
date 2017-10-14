@@ -1,0 +1,325 @@
+html,body {
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+
+/* 第一屏 */
+.section:nth-child(1) {
+  /* 解决margin塌陷问题 */
+  overflow: hidden;
+}
+.section:nth-child(1) .logo{
+  text-align: center;
+  margin-top: 100px;
+}
+.section:nth-child(1) .text{
+  padding: 0 16%;
+  margin-top: 50px;
+  text-align: center;
+}
+.section:nth-child(1) .text ul{
+  display: flex;
+}
+.section:nth-child(1) .text li{
+  flex: 1;
+}
+.section:nth-child(1) .text img {
+  width: 80%;
+  height: 80%;
+  transition: all 1.5s;
+  margin:  0 25px;
+  opacity: 0;
+}
+.section:nth-child(1) .info{
+  display: flex;
+  padding: 0 22%;
+  text-align: center;
+  margin-top: 50px;
+}
+.section:nth-child(1) .info img{
+  width: 100%;
+}
+
+/* 第一屏动画 */
+
+.section.current:nth-child(1) .text img {
+  margin: 0 5px;
+  opacity: 1;
+}
+
+/* 第二屏 */
+.section:nth-child(2) {
+  /* 清除浮动 */
+  overflow: hidden;
+}
+.section:nth-child(2) .shield{
+  float: left;
+  width: 420px;
+  margin-top: 120px;
+  margin-left: 120px;
+}
+
+.section:nth-child(2)  .shield img{
+  /*这里加transition 代表 无论是否有current这个类名 都会出现 过渡  */
+  /* 因此把transition 加到.section.current:nth-child(2)  .shield img中 */
+  /* transition: all 2s; */
+}
+
+.section:nth-child(2) .shield img:nth-child(1){
+  transform: rotate(70deg) translate(-200px, 300px);
+}
+.section:nth-child(2) .shield img:nth-child(2){
+  transform: rotate(90deg) translate(-200px, -300px);
+}
+
+.section:nth-child(2) .shield img:nth-child(3){
+  transform: rotate(120deg) translate(200px, -300px);
+}
+
+.section:nth-child(2) .shield img:nth-child(4){
+  transform: rotate(140deg) translate(400px, 150px);
+}
+
+.section:nth-child(2) .shield img:nth-child(5){
+  transform: rotate(127deg) translate(-400px, 300px);
+}
+
+.section:nth-child(2) .shield img:nth-child(6){
+  transform: rotate(180deg) translate(200px, -600px);
+}
+
+.section:nth-child(2) .shield img:nth-child(7){
+  transform: rotate(390deg) translate(-666px, 666px);
+}
+
+.section:nth-child(2) .shield img:nth-child(8){
+  transform: rotate(-250deg) translate(-200px, 233px);
+}
+
+.section:nth-child(2) .shield img:nth-child(9){
+  transform: rotate(-175deg) translate(-100px, 700px);
+}
+
+.section:nth-child(2) .info{
+  float: right;
+  margin-right: 124px;
+  margin-top: 160px;
+}
+
+/* 第二屏动画 */
+.section.current:nth-child(2)  .shield img {
+  transition: all 2s;
+  transform: rotate(0deg) translate(0px, 0px);
+}
+
+/* 第三屏 */
+.section:nth-child(3) {
+  position: relative;
+  /* 超出隐藏 */
+  overflow: hidden;
+}
+.section:nth-child(3) .info {
+  margin-top: 160px;
+  margin-left: 120px;
+  float: left;
+}
+.section:nth-child(3) .circle {
+  margin-top: 120px;
+  margin-right: 120px;
+  float: right;
+}
+.section:nth-child(3) .rocket {
+  position: absolute;
+  bottom: -205px;
+  right: 555px;
+
+  
+}
+
+/* 第三屏的动画 */
+.section.current:nth-child(3) .rocket {
+  position: absolute;
+  bottom: 223px;
+  right: 240px;
+
+  transition: all 1.5s;
+}
+
+
+/* 第四屏 */
+.section:nth-child(4) {
+  overflow: hidden;
+}
+
+.section:nth-child(4) .search {
+  float: left;
+  margin-top: 155px;
+  margin-left: 100px;
+  position: relative;
+}
+
+.section:nth-child(4) .search {
+  transform: translateX(-200%);
+
+  transition: all 1s;
+}
+.section:nth-child(4) .search .key {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+
+  width: 0px;
+  overflow: hidden;
+}
+
+.section:nth-child(4) .search .result {
+  position: relative;
+  top: -16px;
+  overflow: hidden;
+}
+
+.section:nth-child(4) .search .result img {
+  transform: translateY(-100%);
+
+}
+.section:nth-child(4) .info {
+  float: right;
+  margin-top: 160px;
+  margin-right: 100px;
+}
+
+
+/* 第四屏动画 */
+.section.current:nth-child(4) .search{
+  transform: translate(0px);
+}
+
+.section.current:nth-child(4) .search .key{
+  animation: typing 2.5s 1s steps(5) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+.section.current:nth-child(4) .search .result img {
+  transition: all 1s 4s;
+  transform: translateY(0%);
+}
+
+/* 第五屏 */
+.section:nth-child(5) {
+  overflow: hidden;
+}
+.section:nth-child(5) .info{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.section:nth-child(5) .browser{
+  width: 1004px;
+  height: 474px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.section:nth-child(5) .toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.section:nth-child(5) .toolbar-line {
+  position: absolute;
+  top: 31px;
+  left: 73px;
+  width: 918px;
+  height: 25px;
+  border: 1px solid #f7f7f7;
+  /* box-shadow: 0 0 1px #fff; */
+}
+.section:nth-child(5) .extra {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.section:nth-child(5) .extra-line {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  background-color: #fff;
+}
+
+.section:nth-child(5) .line{
+  position: absolute;
+  /*transition: all 1s;*/
+}
+
+.section:nth-child(5) .linetop,.section:nth-child(5) .linebottom {
+  width: 100%;
+  height: 1px;
+  background-color: #f7f7f7;
+}
+
+.section:nth-child(5) .lineleft,.section:nth-child(5) .lineright {
+  height: 100%;
+  width: 1px;
+  background-color: #f7f7f7;
+}
+
+.section:nth-child(5) .linetop {
+  top: 0;
+  right: -100%;
+}
+
+.section:nth-child(5) .linebottom {
+  bottom: 0;
+  left: -100%;
+}
+
+
+.section:nth-child(5) .lineleft {
+  top: -100%;
+  left:0;
+}
+
+.section:nth-child(5) .lineright {
+    right: 0;
+    bottom: -100%;
+}
+
+
+/* 第五屏动画 */
+.section.current:nth-child(5) .line{
+  transition: all 1s;
+}
+
+.section.current:nth-child(5) .linetop {
+  top: 0;
+  right: 0%;
+}
+
+.section.current:nth-child(5) .linebottom {
+  bottom: 0;
+  left: 0%;
+}
+
+
+.section.current:nth-child(5) .lineleft {
+  top: 0%;
+  left:0;
+}
+
+.section.current:nth-child(5) .lineright {
+    right: 0;
+    bottom: 0%;
+}

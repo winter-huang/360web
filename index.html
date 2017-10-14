@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>360原版网页</title>
+  <link rel="stylesheet" href="./css/copy.css">
+</head>
+
+<body>
+  <div id="dowebok">
+
+    <!-- 第一屏 -->
+    <div class="section">
+        <!-- logo -->
+        <div class="logo">
+          <img src="./images/logo.png" alt="">
+        </div>
+        <!-- 文字 -->
+        <div class="text">
+          <ul>
+            <li><img src="./images/text_1.png" alt=""></li>
+            <li><img src="./images/text_2.png" alt=""></li>
+            <li><img src="./images/text_3.png" alt=""></li>
+            <li><img src="./images/text_4.png" alt=""></li>
+            <li><img src="./images/text_5.png" alt=""></li>
+            <li><img src="./images/text_6.png" alt=""></li>
+            <li><img src="./images/text_7.png" alt=""></li>
+            <li><img src="./images/text_8.png" alt=""></li>
+          </ul>
+        </div>
+        <!-- 广告 -->
+        <div class="info">
+          <img src="./images/info_1.png" alt="">
+        </div>
+    </div>
+    <!-- 第二屏 -->
+    <div class="section">
+      <!-- 盾牌 -->
+      <div class="shield">
+        <img src="./images/shield_1.png" alt="">
+        <img src="./images/shield_2.png" alt="">
+        <img src="./images/shield_3.png" alt="">
+        <img src="./images/shield_4.png" alt="">
+        <img src="./images/shield_5.png" alt="">
+        <img src="./images/shield_6.png" alt="">
+        <img src="./images/shield_7.png" alt="">
+        <img src="./images/shield_8.png" alt="">
+        <img src="./images/shield_9.png" alt="">
+      </div>
+      <!-- 广告 -->
+      <div class="info">
+        <img src="./images/info_2.png" alt="">
+      </div>
+    </div>
+    <!-- 第三屏 -->
+    <div class="section">
+      <!-- 广告 -->
+      <div class="info">
+        <img src="./images/info_3.png" alt="">
+      </div>
+      <!-- 圆背景 -->
+      <div class="circle">
+        <img src="./images/circle.png" alt="">
+      </div>
+      <!-- 小火箭 -->
+      <img class="rocket" src="./images/rocket.png" alt="">
+    </div>
+    <!-- 第四屏 -->
+    <div class="section">
+        <!-- 搜索 -->
+        <div class="search">
+          <!-- 搜索框 -->
+          <div class="search-box">
+            <img src="./images/search.png" alt="">
+          </div>
+          <!-- 搜索词 -->
+          <div class="key">
+            <img src="./images/key.png" alt="">
+          </div>
+          <!-- 搜索框 -->
+          <div class="result">
+            <img src="./images/result.png" alt="">
+          </div>
+        </div>
+        <!-- 广告 -->
+        <div class="info">
+          <img src="./images/info_4.png" alt="">
+        </div>
+    </div>
+    <!-- 第五屏 -->
+    <div class="section">
+      <div class="info">
+        <img src="./images/info_5.png" alt="">
+      </div>
+
+      <div class="browser">
+        <!-- 四条线 -->
+        <i class="line linetop"></i>
+        <i class="line linebottom"></i>
+        <i class="line lineleft"></i>
+        <i class="line lineright"></i>
+        <div class="toolbar">
+          <img src="./images/toolbar.png" alt="">
+          <div class="toolbar-line"></div>
+        </div>
+        
+        <div class="extra-line"></div>
+        <div class="extra">
+
+          <img src="./images/extra.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.fullpage.min.js"></script>
+  <script>
+    $(function () {
+      $('#dowebok').fullpage({
+        // 设置每一屏的颜色
+        sectionsColor:['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+        // 设置的是每一屏的锚点
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        afterLoad:function(){
+
+          //  清除所有current
+          $(".section").removeClass('current');
+          //console.log($(this));// 当前的那一屏
+          // 给当前这一屏 添加一个类名 current
+          var _this = $(this); 
+          setTimeout(function(){
+            // $(this) // window
+            _this.addClass("current"); 
+          },200)
+
+        }
+      });
+    });
+
+
+    // var dark = {
+    //   name: "lily",
+    //   old: 2,
+    //   sayHi: function(){
+    //     console.log("hi");
+    //   }
+    // }
+
+    // dark.sayHi();
+  </script>
+</body>
+
+</html>
